@@ -41,7 +41,7 @@ EOF
                 "streamSettings": {
                     "network":"ws",
                     "wsSettings": {
-                        "path": ""
+                        "path": "${WSPATH}"
                     }
                 }
             }
@@ -60,7 +60,7 @@ EOF
 clone_repo(){
     echo "进行初始化。。。"
 	rm -rf IBMYes
-    git clone https://github.com/CCChieh/IBMYes
+    git clone https://github.com/paladin2000_cn/IBMYes
     cd IBMYes
     git submodule update --init --recursive
     cd v2ray-cloudfoundry/v2ray
@@ -104,9 +104,9 @@ install(){
     VMESSCODE=$(base64 -w 0 << EOF
     {
       "v": "2",
-      "ps": "ibmyes",
-      "add": "ibmyes.us-south.cf.appdomain.cloud",
-      "port": "443",
+      "ps": "myproxy2000",
+      "add": "myproxy2000.us-south.cf.appdomain.cloud",
+      "port": "8080",
       "id": "${UUID}",
       "aid": "4",
       "net": "ws",
